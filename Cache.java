@@ -2,7 +2,7 @@ import java.util.LinkedList;
 
 public class Cache<T> {
     private LinkedList<T> elems;
-    private int maxCapacity, hits, numRefs;
+    private int maxCapacity, hits, refs;
 
     public Cache() {
         init();
@@ -55,7 +55,7 @@ public class Cache<T> {
     public void clearCache() {
         elems.clear();
         hits = 0;
-        numRefs = 0;
+        refs = 0;
         maxCapacity = 0;
     }
 
@@ -69,7 +69,7 @@ public class Cache<T> {
      */
     public boolean search(T elem) {
         boolean elemExists = false;
-        numRefs += 1;
+        refs += 1;
 
         if (elems.contains(elem)) {
             hits += 1;
@@ -87,6 +87,18 @@ public class Cache<T> {
 
     public int getSize() {
         return elems.size();
+    }
+
+    public int getHits() {
+        return hits;
+    }
+
+    public int getRefs() {
+        return refs;
+    }
+
+    private boolean isEmpty() {
+        return elems.size() == 0;
     }
 
     /**

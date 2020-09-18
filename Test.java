@@ -55,6 +55,8 @@ public class Test {
                         }
                     }
                 }
+
+                System.out.println(levelOneCacheResults());
             } else if (numCacheLevels == 2) {
                 while (lineScanner.hasNext()) {
                     wordScanner = new Scanner(lineScanner.nextLine());
@@ -82,13 +84,42 @@ public class Test {
                     }
                 }
 
-                // Write some code to print the results
+                // Print cache statistics.
+                System.out.println(globalCacheResults());
+                System.out.println(levelOneCacheResults());
+                System.out.println(levelTwoCacheResults());
             }
 
             lineScanner.close();
         } catch (FileNotFoundException e) {
             e.printStackTrace();
+        } catch (Exception e) {
+            e.printStackTrace();
         }
+    }
+
+    private static String globalCacheResults() {
+        String results = "Number of global references: " + cacheLevelOne.getRefs()
+                        + "\nNumber of global cache hits: " + (cacheLevelOne.getHits() + cacheLevelTwo.getHits())
+                        + "\nGlobal hit ratio: " + (cacheLevelOne.getHits() + cacheLevelTwo.getHits()) / (double) cacheLevelOne.getRefs();
+
+        return results;
+    }
+
+    private static String levelOneCacheResults() {
+        String results = "\nNumber of 1st level references: " + cacheLevelOne.getRefs()
+        + "\nNumber of 1st level cache hits: " + cacheLevelOne.getHits()
+        + "\n1st level cache hit ratio: " + cacheLevelOne.getHits() / (double) cacheLevelOne.getRefs();
+
+        return results;
+    }
+
+    private static String levelTwoCacheResults() {
+        String results = "\nNumber of 2nd level references: " + cacheLevelTwo.getRefs()
+        + "\nNumber of 2nd level cache hits: " + cacheLevelTwo.getHits()
+        + "\n2nd level cache hit ratio: " + cacheLevelTwo.getHits() / (double) cacheLevelTwo.getRefs();
+
+        return results;
     }
 
     private static boolean isArgsValid(String[] args) {
