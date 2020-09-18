@@ -37,19 +37,48 @@ public class Cache<T> {
         elems.remove(elem);
     }
 
+    /**
+     * If an elements exists in the cache,
+     * it must be moved to the top of the
+     * cache.
+     * 
+     * @param elem; The element to move.
+     */
+    public void moveToTop(T elem) {
+        removeObject(elem);
+        addObject(elem, Position.TOP);
+    }
+
+    /**
+     * Reset cache settings and elements.
+     */
     public void clearCache() {
         elems.clear();
         hits = 0;
         numRefs = 0;
+        maxCapacity = 0;
     }
 
-    public boolean contains(T elem) {
+    /**
+     * Searches the cache for the given elem.
+     * Increments number of references and hits
+     * which are used to caculate hit ratio.
+     * 
+     * @param elem
+     * @return true if elem in cache; otherwise, false.
+     */
+    public boolean search(T elem) {
+        boolean elemExists = false;
         numRefs += 1;
-        return elems.contains(elem);
-    }
 
-    public void addToHits(int amount) {
-        hits += amount;
+        if (elems.contains(elem)) {
+            hits += 1;
+            elemExists = true;
+        } else {
+            
+        }
+
+        return elemExists;
     }
 
     public void setMaxCapacity(int maxCapacity) {
@@ -60,6 +89,11 @@ public class Cache<T> {
         return elems.size();
     }
 
+    /**
+     * Get clone of cache elements.
+     * 
+     * @return clone of elements in list.
+     */
     public LinkedList<T> getElems() {
         LinkedList<T> clone = new LinkedList<T>();
 
