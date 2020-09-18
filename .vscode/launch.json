@@ -15,7 +15,7 @@
             "name": "Debug Test 1 50 small.txt",
             "request": "launch",
             "mainClass": "Test",
-            "projectName": "programming-assignment-1_bd7b1590",
+            "projectName": "programming-assignment-1_f473e810",
             "args": "1 50 small.txt"
         },
         {
@@ -23,7 +23,7 @@
             "name": "Debug Test 1 1000 Encyclopedia.txt",
             "request": "launch",
             "mainClass": "Test",
-            "projectName": "programming-assignment-1_bd7b1590",
+            "projectName": "programming-assignment-1_f473e810",
             "args": "1 1000 Encyclopedia.txt"
         },
         {
@@ -31,7 +31,7 @@
             "name": "Debug Test 2 1000 2000 Encyclopedia.txt",
             "request": "launch",
             "mainClass": "Test",
-            "projectName": "programming-assignment-1_bd7b1590",
+            "projectName": "programming-assignment-1_f473e810",
             "args": "2 1000 2000 Encyclopedia.txt"
         },
         {
@@ -39,7 +39,7 @@
             "name": "Debug Test 2 1000 5000 Encyclopedia.txt",
             "request": "launch",
             "mainClass": "Test",
-            "projectName": "programming-assignment-1_bd7b1590",
+            "projectName": "programming-assignment-1_f473e810",
             "args": "2 1000 5000 Encyclopedia.txt"
         },
         {
@@ -47,7 +47,7 @@
             "name": "Debug too many args",
             "request": "launch",
             "mainClass": "Test",
-            "projectName": "programming-assignment-1_bd7b1590",
+            "projectName": "programming-assignment-1_f473e810",
             "args": "1 1000 2000 Encyclopedia.txt OneTooManyArgs"
         },
         {
@@ -55,8 +55,16 @@
             "name": "Test 2 5 10 small.txt",
             "request": "launch",
             "mainClass": "Test",
-            "projectName": "programming-assignment-1_bd7b1590",
+            "projectName": "programming-assignment-1_f473e810",
             "args": "2 5 10 small.txt"
+        },
+        {
+            "type": "java",
+            "name": "Test 2 5 12 small.txt",
+            "request": "launch",
+            "mainClass": "Test",
+            "projectName": "programming-assignment-1_f473e810",
+            "args": "2 5 12 small.txt"
         }
     ]
 }
